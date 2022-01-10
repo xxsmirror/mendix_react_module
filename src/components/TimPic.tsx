@@ -1,15 +1,13 @@
 import { createElement } from "react";
 import { DatePicker, Space } from "antd";
+import { ATpContainerProps } from "../../typings/ATpProps";
 
 const { RangePicker } = DatePicker;
 
-interface Props {
-    onOk?: () => void;
-}
-const Timep = ({ onOk }: Props): any => {
+const Timep = (props: ATpContainerProps): any => {
     return (
         <Space>
-            <DatePicker size="large" showTime showToday onOk={onOk} />
+            <DatePicker size="large" showTime showToday onOk={props.timeChange?.execute} />
             <RangePicker />
         </Space>
     );
